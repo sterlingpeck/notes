@@ -23,7 +23,7 @@ router.get("/notes/:id", (req, res) => {
 router.post("/notes", (req, res) => {
   req.body.id = notes.length.toString();
   if (!validateNotes(req.body)) {
-    res.status(400).send("Wrong Format");
+    res.status(400).send("Wrong format");
   } else {
     const note = createNote(req.body, notes);
     res.json(note);
